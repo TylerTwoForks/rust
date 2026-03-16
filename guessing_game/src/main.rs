@@ -15,13 +15,15 @@ fn main() {
             .read_line(&mut guess)
             .expect("Failed to read line");
         //this expect() line is actually called on the Result type of .read_line() which can bee OK or ERR. 
-        //if it's ERR, this expect() will crash the program (panic). if it's OK, that OK value just gets returned and is used in &mut guess. 
+        //if it's ERR, this expect() will crash the program (panic). if it's OK, that OK value just gets returned and 
+        // is used in &mut guess. 
         //handling the error is best instead of crashing like this, but we'll get to that in later lessons. 
 
         println!("You guessed: {guess}");
 
         //being able to re-use the same variable name here is called Shadowing. 
-        // even though we had instantiated `guess` above, we can create a new variable with the same name here and the compiler is ok with it. 
+        // even though we had instantiated `guess` above, we can create a new variable with the same name here and 
+        //the compiler is ok with it. 
         // this functionality is often used when converting types.
         let guess:u32 = match guess.trim().parse() {
             Ok(num) => num,
